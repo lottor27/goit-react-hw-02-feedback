@@ -1,5 +1,4 @@
-import SignUpForm from './Feedback/feedback'
-
+import SignUpForm from './Feedback/feedback';
 
 export const App = () => {
   return (
@@ -14,7 +13,7 @@ export const App = () => {
       }}
     >
       <SignUpForm title="Upload stats" />
-      React homework template
+      React homework template feedback
     </div>
   );
 };

@@ -1,42 +1,81 @@
-import css from './feedback.module.css';
-import PropTypes from 'prop-types';
 
-export class SignUpForm extends Component {
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+export default class FeedBack extends Component {
   state = {
-    login: '',
+    good: 0,
+    neutral: 0,
+    bad: 0,
   };
 
-  // Отвечает за обновление состояния
-  handleChange = e => {
-    this.setState({ login: e.target.value });
+  changeState = event => {
+    const defBtn = event.currentTarget.textContent;
+    if (defBtn === 'Good') {
+      this.setState(prevState => {
+        console.log('prevState >>', prevState);
+        return {
+          good: prevState.good + 1,
+        };
+      });
+    } else if (defBtn === 'Neutral') {
+      this.setState(prevState => {
+        console.log('prevState >>', prevState);
+        return {
+          neutral: prevState.neutral + 1,
+        };
+      });
+    } else {
+      this.setState(prevState => {
+        console.log('prevState >>', prevState);
+        return {
+          bad: prevState.bad + 1,
+        };
+      });
+    }
   };
 
-  // Вызывается при отправке формы
-  handleSubmit = evt => {
-    evt.preventDefault();
-    console.log(`Signed up as: ${this.state.login}`);
+  countTotalFeedback = () => {
+    const total = this.state.good + this.state.neutral + this.state.bad;
+    console.log(total);
+    return total
+  };
 
-    // Проп который передается форме для вызова при сабмите
-    this.props.onSubmit({ ...this.state });
+  countPositiveFeedbackPercentage = () => {
+    const total = this.state.good + this.state.neutral + this.state.bad;
+    console.log(total);
+    const percentage = Math.round((this.state.good * 100) / total); 
+    console.log(percentage);
+    return percentage;
   };
 
   render() {
-    const { login } = this.state;
-
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name
-          <input
-            type="text"
-            placeholder="Enter login"
-            value={login}
-            onChange={this.handleChange}
-          />
-        </label>
+      <div>
+        <div>
+          <button type="button" onClick={this.changeState}>
+            Good
+          </button>
+          <button type="button" onClick={this.changeState}>
+            Neutral
+          </button>
+          <button type="button" onClick={this.changeState}>
+            Bad
+          </button>
+        </div>
 
-        <button type="submit">Sign up as {login}</button>
-      </form>
+        <ul>
+          Statistics
+          <li>Good {this.state.good}</li>
+          <li>Neural {this.state.neutral}</li>
+          <li>Bad {this.state.bad}</li>
+          <li>Total {this.countTotalFeedback()}</li>
+          <li>Positive feedback {this.countPositiveFeedbackPercentage()}%</li>
+        </ul>
+      </div>
     );
   }
 }
+
+// countTotalFeedback(); 
+// countPositiveFeedbackPercentage();
