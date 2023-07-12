@@ -44,6 +44,9 @@ export default class FeedBack extends Component {
   countPositiveFeedbackPercentage = () => {
     const total = this.state.good + this.state.neutral + this.state.bad;
     console.log(total);
+    if (total === 0) {
+      return
+    }
     const percentage = Math.round((this.state.good * 100) / total); 
     console.log(percentage);
     return percentage;

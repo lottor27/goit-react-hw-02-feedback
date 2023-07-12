@@ -1,5 +1,6 @@
 import SignUpForm from './Feedback/feedback';
 
+
 export const App = () => {
   return (
     <div
@@ -14,6 +15,15 @@ export const App = () => {
     >
       <SignUpForm title="Upload stats" />
       React homework template feedback
+      {/* <Section title="">
+        <Statistics
+          good={0}
+          neutral={0}
+          bad={0}
+          total={total}
+          positivePercentage={percentage}
+        />
+      </Section> */}
     </div>
   );
 };
