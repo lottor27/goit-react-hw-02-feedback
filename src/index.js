@@ -6,8 +6,7 @@ import FeedBack from './components/Feedback/feedback';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
-    {/* <FeedBack/> */}
+    <App/>
   </React.StrictMode>
   
 );

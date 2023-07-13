@@ -13,8 +13,11 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <FeedBack title="Upload stats" />
-      React homework template feedback
+      <FeedBack title="Upload stats"
+        good = {0}
+          neutral = {0} bad = {0} 
+      />
+      
       
     </div>
   );
