@@ -1,4 +1,4 @@
-import SignUpForm from './Feedback/feedback';
+import FeedBack from './Feedback/feedback';
 
 
 export const App = () => {
@@ -13,17 +13,9 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <SignUpForm title="Upload stats" />
+      <FeedBack title="Upload stats" />
       React homework template feedback
-      {/* <Section title="">
-        <Statistics
-          good={0}
-          neutral={0}
-          bad={0}
-          total={total}
-          positivePercentage={percentage}
-        />
-      </Section> */}
+      
     </div>
   );
 };
