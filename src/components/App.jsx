@@ -1,4 +1,6 @@
 import FeedBack from './Feedback/feedback';
+import changeState from './Feedback/onleavefeedback'
+
 
 
 export const App = () => {
@@ -13,12 +15,11 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <FeedBack title="Upload stats"
-        good = {0}
-          neutral = {0} bad = {0} 
-      />
       
-      
+      <div>
+      <FeedBack title="Upload stats" />
     </div>
-  );
+    </div>
+    )
 };
+
