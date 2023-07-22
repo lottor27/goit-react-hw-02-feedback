@@ -1,15 +1,24 @@
-import App from "components/App"
+import React from "react"
 
-// function Statistics (stat) {
 
-//     <ul>
-//           Statistics
-//           <li>Good </li>
-//           <li>Neural </li>
-//           <li>Bad </li>
-//           <li>Total </li>
-//           <li>Positive feedback %</li>
-//         </ul>
-// }
+function Statistics ({good,neutral,bad,total, positivePercentage, isActive }) {
 
-// export default Statistics
+  if(!isActive){
+    return
+  }
+  return(
+ 
+    <ul>
+      Statistics
+      <li>Good {good}</li>
+      <li>Neural {neutral}</li>
+      <li>Bad {bad}</li>
+      <li>Total {total}</li>
+      <li>Positive feedback {positivePercentage}%</li>
+    </ul>)
+  
+  
+
+}
+
+export default Statistics
