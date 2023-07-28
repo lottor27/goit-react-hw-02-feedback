@@ -1,21 +1,17 @@
 import React from "react"
 import css from "./feedBackOptions.module.css"
+import { nanoid } from 'nanoid'
 
-  const FeedbackButtons = ({onleavefeedback}) => {
+  const FeedbackButtons = ({onleavefeedback, options}) => {
     return(
     <div>
-      <button className={css.btn2} type="button"  onClick={onleavefeedback}>
-              <samp>Good</samp>
-            </button>
-            <button className={css.btn2} type="button" onClick={onleavefeedback}>
-              <samp>Neutral</samp>
-            </button>
-            <button className={css.btn2} type="button" onClick={onleavefeedback}>
-              <samp>Bad</samp>
-            </button>
-            </div>
-           )
-    
-  }
+      {options.map(option =>(
+        <button className={css.btn2} type="button"  onClick={onleavefeedback} key={nanoid()}>
+        <samp>{option}</samp>
+      </button>
+      ))}
+      </div>
+      )}
+      
 
   export default FeedbackButtons

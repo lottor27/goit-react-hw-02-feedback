@@ -11,8 +11,13 @@ export default class App extends Component {
     neutral: 0,
     bad: 0,
     isActive: false,
+    options : [
+      "Good",
+      "Neutral",
+      "Bad"]
   };
 
+ 
 countTotalFeedback ()  {
     const total = this.state.good + this.state.neutral + this.state.bad;
     return total
@@ -71,7 +76,8 @@ countPositiveFeedbackPercentage  () {
        <Notification isActive={this.state.isActive} message="There is no feedback"
         />   
           
-          <FeedbackButtons onleavefeedback = {this.changeState}/>
+          <FeedbackButtons onleavefeedback = {this.changeState}
+          options={this.state.options}/>
           
         </div>
 
